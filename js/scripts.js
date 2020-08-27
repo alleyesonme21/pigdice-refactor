@@ -5,10 +5,9 @@ function Player(name,id,isTurn) {
     this.id = id,
     this.isTurn = isTurn,
     this.pointTotal = 0,
-    this.turnPointTotal = 0
+    this.turnPointTotal = 0,
+    this.diceRolls = 0
 }
-
-
 
 var dice = {
     sides: 6,
@@ -20,6 +19,7 @@ var dice = {
 
 Player.prototype.roll = function() {
     const roll = dice.roll();
+    this.diceRolls +=1;
     if (roll === 1) {
         this.turnPointTotal = 0;
         this.isTurn = false;
@@ -27,10 +27,11 @@ Player.prototype.roll = function() {
     } else {
         this.turnPointTotal += roll;
         if ((this.pointTotal + this.turnPointTotal) >= 100) {
-            window.open("https://media.giphy.com/media/cOtvwSHKaFK3Ul1VVu/giphy.gif")
-            // update display: winner --> this.name
+            window.open("https://giphy.com/gifs/memecandy-cOtvwSHKaFK3Ul1VVu/fullscreen")
+            location.reload();// update display: winner --> this.name
         } 
     }
+    console.log(this.diceRolls);
     return roll;
 }
 
@@ -54,14 +55,11 @@ function updateDisables(player) {
     }
 }
 
-
-//$("playerOneHold#button").prop("disabled", true)
-
-
 /* Player.prototype.win = function() {
     // victory display
     // update display: winner --> this.name
     // update display: point total --> this.pointTotal
+    // reload
 } */
 
 // UI Logic
@@ -93,16 +91,21 @@ $(document).ready(function(){
     $("button#playerOneRoll").click(function() {
         const result = playerOne.roll();
         updatePlayerOneTurnTotal(playerOne,result);
+        if (result != 1) {
+            updateDisables(playerTwo);
+        }
     })
     $("button#playerOneHold").click(function() {
         playerOne.hold();
         updatePlayerOneOverallTotal(playerOne);
         updateDisables(playerOne);
-
     })
     $("button#playerTwoRoll").click(function() {
         const result = playerTwo.roll();
         updatePlayerTwoTurnTotal(playerTwo,result);
+        if (result != 1) {
+            updateDisables(playerOne);
+        }
     })
     $("button#playerTwoHold").click(function() {
         playerTwo.hold();
@@ -114,6 +117,7 @@ $(document).ready(function(){
 function updatePlayerOneTurnTotal(player,roll) {
     $("#playerOneTurnTotal").text(player.turnPointTotal);
     $("#playerOneCurrentRoll").text(roll);
+    $("#playerOneTotalRoll").text(player.diceRolls);
 }
 
 function updatePlayerOneOverallTotal(player) {
@@ -123,6 +127,7 @@ function updatePlayerOneOverallTotal(player) {
 function updatePlayerTwoTurnTotal(player,roll) {
     $("#playerTwoTurnTotal").text(player.turnPointTotal);
     $("#playerTwoCurrentRoll").text(roll);
+    $("#playerTwoTotalRoll").text(player.diceRolls);
 }
 
 function updatePlayerTwoOverallTotal(player) {
