@@ -1,0 +1,19 @@
+1. NPM INIT - y (creates the package.json)
+3. copy information for package.json
+4. create .gitignore
+5.create webpack.config.js
+6. create .eslintrc
+7. add information for .gitignore
+8. create src folder
+9. Refactor code for Main.js and pigdice.js
+10 create main.js (UI Logic)
+11. create pigdice.js (Business logic)
+12. remove tags in index.html for linking jquery, bootstrap, css
+13.    add import tags in main.js
+    create import function in main.js (UI logic)
+    create export functions in pigdice.js (business logic)
+    create Dist folder (bundle and index.html lives there)
+13. npm run install
+14. create _test_ folder
+15. create pigdice.test.js in _test_ folder
+16. .babelrc
