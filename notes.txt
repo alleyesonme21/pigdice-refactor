@@ -5,6 +5,7 @@
 5. create .eslintrc
 6. add information for .gitignore
 7. create src folder
+move index.html to src folder
 8. Refactor code for Main.js and pigdice.js
 9 create main.js (UI Logic)
 10. create pigdice.js (Business logic)
@@ -20,3 +21,6 @@
 20. run npm install @babel/plugin-transform-modules-commonjs@7.6.0 --save-dev
 19. create .babelrc
 npm run build
+
+
+
