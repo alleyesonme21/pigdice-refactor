@@ -1,19 +1,22 @@
 1. NPM INIT - y (creates the package.json)
-3. copy information for package.json
-4. create .gitignore
-5.create webpack.config.js
-6. create .eslintrc
-7. add information for .gitignore
-8. create src folder
-9. Refactor code for Main.js and pigdice.js
-10 create main.js (UI Logic)
-11. create pigdice.js (Business logic)
-12. remove tags in index.html for linking jquery, bootstrap, css
-13.    add import tags in main.js
-    create import function in main.js (UI logic)
-    create export functions in pigdice.js (business logic)
-    create Dist folder (bundle and index.html lives there)
-13. npm run install
-14. create _test_ folder
-15. create pigdice.test.js in _test_ folder
-16. .babelrc
+2. copy information for package.json
+3. create .gitignore
+4. create webpack.config.js
+5. create .eslintrc
+6. add information for .gitignore
+7. create src folder
+8. Refactor code for Main.js and pigdice.js
+9 create main.js (UI Logic)
+10. create pigdice.js (Business logic)
+11. remove tags in index.html for linking jquery, bootstrap, css
+12. add import tags in main.js
+13. create import function in main.js (UI logic)
+14. create export functions in pigdice.js (business logic)
+15. create Dist folder (bundle and index.html lives there)
+16. npm install
+17. create _test_ folder
+18. create pigdice.test.js in _test_ folder
+19. run npm install @babel/core@7.6.4 --save-dev
+20. run npm install @babel/plugin-transform-modules-commonjs@7.6.0 --save-dev
+19. create .babelrc
+npm run build
